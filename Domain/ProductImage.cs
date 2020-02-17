@@ -8,7 +8,7 @@ namespace Domain
     public class ProductImage
     {
         public int ID { get; set; }
-        public  byte[] Img { get; set; }
+        public  String Img { get; set; }
         public Product RelatedItem { get; set; }
 
     }

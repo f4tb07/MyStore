@@ -11,6 +11,7 @@ namespace Domain
         public int inStoreCount { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
+        public double CurrentPrice { get; set; }
         //first commit  for testing git private Price CurrentPrice { get; set; }
         public List<ProductImage> ImagesList { get; set; } = new List<ProductImage>();
         public List<ProductPrice> PriceHistory { get; set; } = new List<ProductPrice>();

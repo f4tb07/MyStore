@@ -25,156 +25,18 @@
 <body>
     <div id="wrapper">
         <div class="wrapper-holder">
-            <div class="header-holder">
-                <header id="header">
-                    <span class="logo"><a href="index.html">Bambino</a></span>
-                    <div class="tools-nav_holder">
-                        <ul class="tools-nav">
-                            <li><a href="#">حساب کاربری</a></li>
-                            <li class="login"><a href="#">خروج</a></li>
-                        </ul>
-                        <div class="checkout">
-                            <span>3 محصول, <span class="pink">380,50ریال</span></span>
-                            <a href="cart.html" class="btn btn_checkout">پرداخت</a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <a class="menu_trigger" href="#">menu</a>
-                    <nav id="nav">
-                        <ul class="navi">
-                            <li class="searc_li">
-                                <div class="ul_search li">
-                                    <a class="search" href="#"><span>جستجو</span></a>
-                                    <form method="get" class="searchform" action="#">
-                                        <input type="text" class="field" name="s" id="s" placeholder="دنبال چی میگردی؟" />
-                                        <input type="submit" class="submit" value="" />
-                                        <div class="clear"></div>
-                                    </form>
-                                </div>
-                            </li>
-                            <li><a href="products.html">مجموعه ما</a></li>
-                            <li><a href="products.html">محصولات برتر</a></li>
-                            <li><a href="products.html">بهترین فروشندگان</a></li>
-                            <li><a href="products.html">هدایا</a></li>
-                            <li><a href="products.html">تبلیغات</a></li>
-                        </ul>
-                        <div class="ul_search">
-                            <a class="search" href="#"><span>جستجو</span></a>
-                            <form method="get" class="searchform" action="#">
-                                <input type="text" class="field" name="s" id="s" placeholder="دنبال چی میگردی؟" />
-                                <input type="submit" class="submit" value="" />
-                            </form>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            @Html.Partial("_header_holder")
             <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
             <section class="main">
                 <div class="content">
-                    <section class="bar">
-                        <div class="bar-frame">
-                            <ul class="breadcrumbs">
-                                <li><a href="index.html">صفحه اصلی</a></li>
-                                <li>نتایج محصول</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="top-bar">
-                        <form class="form-sort" action="#">
-                            <fieldset>
-                                <div class="row">
-                                    <label for="sort">مرتب سازی بر اساس:</label>
-                                    <select id="sort">
-                                        <option>قیمت</option>
-                                        <option>قیمت</option>
-                                    </select>
-                                </div>
-                                <div class="row">
-                                    <label for="page">محصولات در هر صفحه:</label>
-                                    <select id="page">
-                                        <option>8</option>
-                                        <option>8</option>
-                                    </select>
-                                </div>
-                                <div class="row">
-                                    <label for="page">نوع محصول:</label>
-                                    <select id="page">
-                                        <option>عروسک</option>
-                                        <option>خرس</option>
-                                    </select>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <ul class="paging">
-                            <li class="prev"><a href="#">prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="next"><a href="#">next</a></li>
-                        </ul>
-                    </div>
-                                        @RenderBody()
-                    <div class="top-bar top-bar-add">
-                        <ul class="paging">
-                            <li class="prev"><a href="#">prev</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="next"><a href="#">next</a></li>
-                        </ul>
-                    </div>
+                    @Html.Partial("_barandtopbar")
+                    @RenderBody()
+                    @Html.Partial("_topbaradd")
                 </div>
             </section>
         </div>
         <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
-        <footer id="footer">
-            <div class="footer-content">
-                <ul class="left_side">
-                    <li>
-                        <span>درباره ما:</span>
-                        <p style="line-height: 26px;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-                    </li>
-                    <li>
-                        <span>پست های محبوب:</span>
-                        <a href="#">صفحه‌آرایی و طراحی گرافیک </a>
-                        <a href="#">
-
-                            لورم ایپسوم یا طرح‌نما
-                        </a>
-                        <a href="#">صفحه‌آرایی و طراحی گرافیک </a>
-                        <a class="last" href="#">
-
-                            لورم ایپسوم یا طرح‌نما
-                        </a>
-                    </li>
-                    <li>
-                        <span>تماس با ما:</span>
-                        <p>تهران- خیابان شریعتی<br />خیابان ملک-بن بست ایرانیاد</p>
-                        <p>تلفن: 88454816<br /> Example@gmail.com</p>
-
-                    </li>
-                </ul>
-                <ul class="right_side">
-                    <li>
-                        <span>رسانه های اجتماعی:</span>
-                        <div class="social">
-                            <a href="#" class="fb">Facebook</a>
-                            <a href="#" class="tw">Twitter</a>
-                        </div>
-                        <div class="social">
-                            <a href="#" class="gl">Google+</a>
-                            <a href="#" class="pn">Pinterest</a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-                <p class="copy">یه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد</p>
-            </div>
-        </footer>
+        @Html.Partial("_footer")
     </div>
     <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>

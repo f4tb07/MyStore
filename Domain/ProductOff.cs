@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-
-
-
-
 namespace Domain
 {
-    public class ProudctOff    {
+    public class ProductOff    {
         public int ID { get; set; }
         public string Code { get; set; }
         public double Amount { get; set; }

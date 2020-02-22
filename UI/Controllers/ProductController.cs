@@ -14,6 +14,7 @@ namespace UI.Controllers
         public ProductController(IProductRepository LocalProductRepository)
         {
             _localProductRepository = LocalProductRepository;
+           // _localProductRepository.Add();
         }
 
         public IActionResult ShowAllProducts()

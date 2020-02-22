@@ -13,7 +13,8 @@ namespace DAL
         public void Configure(EntityTypeBuilder<ProductImage> builder)
         {
             builder.ToTable("ProductImageTbl");
-
+            
+      
         }
     }
 }

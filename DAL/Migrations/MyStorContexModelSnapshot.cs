@@ -79,12 +79,12 @@ namespace DAL.Migrations
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RelatedItemID")
+                    b.Property<int?>("RelatedProductID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RelatedItemID");
+                    b.HasIndex("RelatedProductID");
 
                     b.ToTable("ProductImageTbl");
                 });
@@ -148,9 +148,9 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Domain.ProductImage", b =>
                 {
-                    b.HasOne("Domain.Product", "RelatedItem")
+                    b.HasOne("Domain.Product", "RelatedProduct")
                         .WithMany("ImagesList")
-                        .HasForeignKey("RelatedItemID");
+                        .HasForeignKey("RelatedProductID");
                 });
 
             modelBuilder.Entity("Domain.ProductOff", b =>

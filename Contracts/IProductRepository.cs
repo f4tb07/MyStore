@@ -7,7 +7,7 @@ namespace Contracts
 {
     public interface IProductRepository
     {
-        void Add(Product _inputProduct);
+        void Add();
         List<Product> GetAll();
     }
 }

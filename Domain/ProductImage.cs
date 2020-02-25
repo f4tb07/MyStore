@@ -9,7 +9,7 @@ namespace Domain
     {
         public int ID { get; set; }
         public  String Img { get; set; }
-        public Product RelatedItem { get; set; }
+        public Product RelatedProduct { get; set; }
 
     }
 }

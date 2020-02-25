@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
+using UI.Models;
+using UI.Models.Products;
 
 namespace UI.Controllers
 {
@@ -17,10 +19,11 @@ namespace UI.Controllers
            // _localProductRepository.Add();
         }
 
-        public IActionResult ShowAllProducts()
+        public IActionResult ShowAllProducts(int PageNumber=1)
         {
-            var ProductList = _localProductRepository.GetAll();
-            return View(ProductList);
+            MProduct4View ProductModel = new MProduct4View(4, _localProductRepository.GetTotalCount());
+            ProductModel.ProductList2View = _localProductRepository.GetAll(4,PageNumber);
+            return View(ProductModel);
         }
     }
 }

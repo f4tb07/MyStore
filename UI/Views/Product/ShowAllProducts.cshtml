@@ -1,27 +1,28 @@
-﻿@model List<Product> 
+﻿@model MProduct4View
 @{
     ViewData["Title"] = "ShowAllProducts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-    <ul class="item-product">
-        @foreach (var item in Model)
-        {
-            <li>
-                <div class="item">
-                    <div class="image">
-                        <a href="product.html"><img src="@item.ImagesList[0].Img" alt=""></a>
-                    </div>
-                    <span class="name">
-                        <a href="product.html">
-
-                            @item.Name
-                        </a>
-                    </span>
-                    <span>@item.CurrentPrice</span>
+@Html.Partial("_ShowPageNumbers",Model.TotalPageNumber)
+<ul class="item-product">
+    @foreach (var item in Model.ProductList2View)
+    {
+        <li>
+            <div class="item">
+                <div class="image">
+                    <a href="product.html"><img src="@item.ImagesList[0].Img" alt=""></a>
                 </div>
-            </li>
-        }
-        
-       
-    </ul>
+                <span class="name">
+                    <a href="product.html">
+
+                        @item.Name
+                    </a>
+                </span>
+                <span>@item.CurrentPrice</span>
+            </div>
+        </li>
+    }
+
+
+</ul>
+@Html.Partial("_ShowPageNumbers",Model.TotalPageNumber)

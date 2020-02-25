@@ -1,0 +1,16 @@
+﻿@model int
+<div class="top-bar top-bar-add">
+    <ul class="paging">
+        @for (int i = 1; i <= Model; i++)
+        {
+            <li><a  asp-controller="Product" asp-action="ShowAllProducts" asp-route-PageNumber="@i" >@i</a></li>
+        }
+        @*<li class="prev"><a href="#">prev</a></li>
+        
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li class="next"><a href="#">next</a></li>*@
+    </ul>
+</div>

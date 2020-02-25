@@ -7,7 +7,8 @@ namespace Contracts
 {
     public interface IProductRepository
     {
-        void Add();
-        List<Product> GetAll();
+        //void Add();
+        List<Product> GetAll(int PageSize,int PageNumber);
+        int GetTotalCount();
     }
 }

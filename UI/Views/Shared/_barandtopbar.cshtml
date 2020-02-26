@@ -25,13 +25,21 @@
                             <option value="@Model.SelectedPageSize ">@Model.PageSizeArray[i]</option>
                         }
                     </select>*@
-                <select id="page" onchange="doIt(this,'@Url.Action("ShowAllProducts", "Product")')">
-                    @for (int i = 0; i < Model.PageSizeArray.Count(); i++)
+            <select id="page" onchange="doIt(this,'@Url.Action("ShowAllProducts", "Product")')">
+                @for (int i = 0; i < Model.PageSizeArray.Count(); i++)
+                {
+                    @if (Model.SelectedPageSize == Model.PageSizeArray[i])
                     {
-                        <option value="@Model.PageSizeArray[i] ">@Model.PageSizeArray[i]</option>
+                        <option selected value="@Model.PageSizeArray[i] ">@Model.PageSizeArray[i]</option>
                     }
-                </select>
-               
+                    else
+                    {
+                        <option  value="@Model.PageSizeArray[i] ">@Model.PageSizeArray[i]</option>
+                    }
+
+                }
+            </select>
+
             </div>
             <div class="row">
                 <label for="page">نوع محصول:</label>
@@ -42,20 +50,33 @@
             </div>
         </fieldset>
     </form>
-    @*<ul class="paging">
-            <li class="prev"><a href="#">prev</a></li>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li class="next"><a href="#">next</a></li>
-        </ul>*@
+
     <script>
         function doIt(item, baseUrl) {
             window.location.href = baseUrl + '?PageSize=' + item.value + '&PageNumber=1'
-            Model.SelectedPageSize=item.value
-        }    
+            Model.SelectedPageSize = item.value
+        }
     </script>
-    
+    <div class="top-bar top-bar-add">
+        <ul class="paging">
+            @for (int i = 1; i <= Model.TotalPageNumber; i++)
+            {
+                if (i == Model.CurrentPagenumber)
+                {
+                    <li class="active"><a asp-controller="Product" asp-action="ShowAllProducts" asp-route-PageNumber="@i" asp-route-pagesize="@Model.SelectedPageSize  ">@i</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Product" asp-action="ShowAllProducts" asp-route-PageNumber="@i" asp-route-pagesize="@Model.SelectedPageSize">@i</a></li>
+                }
+
+            }
+
+        </ul>
+
+
+    </div>
+
+
+
 </div>

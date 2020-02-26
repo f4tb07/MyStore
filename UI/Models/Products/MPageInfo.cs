@@ -8,6 +8,7 @@ namespace UI.Models.Products
         {
             TotalPageNumber = (int)Math.Ceiling((decimal)TotalProduct / Pagesize);
             CurrentPagenumber = CurrentPage;
+            SelectedPageSize = Pagesize;
         }
 
         public int TotalPageNumber { get; }

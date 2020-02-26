@@ -19,10 +19,11 @@ namespace UI.Controllers
            // _localProductRepository.Add();
         }
 
-        public IActionResult ShowAllProducts(int PageNumber=1)
+        public IActionResult ShowAllProducts(  int PageSize=8,int PageNumber=1)
         {
-            MProduct4View ProductModel = new MProduct4View(4, _localProductRepository.GetTotalCount());
-            ProductModel.ProductList2View = _localProductRepository.GetAll(4,PageNumber);
+            MProduct4View ProductModel= new MProduct4View();
+            ProductModel.ProductPageInfo = new MPageInfo(PageSize, _localProductRepository.GetTotalCount(),PageNumber);
+            ProductModel.ProductList2View = _localProductRepository.GetAll(PageSize,PageNumber);
             return View(ProductModel);
         }
     }

@@ -3,7 +3,8 @@
     ViewData["Title"] = "ShowAllProducts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.Partial("_ShowPageNumbers",Model.TotalPageNumber)
+@Html.Partial("_barandtopbar", Model.ProductPageInfo)
+@Html.Partial("_ShowPageNumbers", Model.ProductPageInfo)
 <ul class="item-product">
     @foreach (var item in Model.ProductList2View)
     {
@@ -25,4 +26,4 @@
 
 
 </ul>
-@Html.Partial("_ShowPageNumbers",Model.TotalPageNumber)
+@Html.Partial("_ShowPageNumbers", Model.ProductPageInfo)

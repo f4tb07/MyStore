@@ -19,19 +19,19 @@
             </div>
             <div class="row">
                 <label for="page">محصولات در هر صفحه:</label>
-                @*<select  id="page" onchange="location.href='@Url.Action("ShowAllProducts","Product")'+'/?PageSize='+'@Model.SelectedPageSize.ToString()'+'&PageNumber=1'">
+                @*<select id="page" onchange="location.href='@Url.Action("ShowAllProducts","Product")'+'/?PageSize='+'@Model.SelectedPageSize.ToString()'+'&PageNumber=1'">
+                        @for (int i = 0; i < Model.PageSizeArray.Count(); i++)
+                        {
+                            <option value="@Model.SelectedPageSize ">@Model.PageSizeArray[i]</option>
+                        }
+                    </select>*@
+                <select id="page" onchange="doIt(this,'@Url.Action("ShowAllProducts", "Product")')">
                     @for (int i = 0; i < Model.PageSizeArray.Count(); i++)
                     {
-                        <option value="@Model.SelectedPageSize ">@Model.PageSizeArray[i]</option>
+                        <option value="@Model.PageSizeArray[i] ">@Model.PageSizeArray[i]</option>
                     }
-                </select>*@
-                <select id="page" >
-                    <option>4</option>
-                    <option>6</option>
-                    <option selected>8</option>
-                    <option>10</option>
                 </select>
-             
+               
             </div>
             <div class="row">
                 <label for="page">نوع محصول:</label>
@@ -43,12 +43,19 @@
         </fieldset>
     </form>
     @*<ul class="paging">
-        <li class="prev"><a href="#">prev</a></li>
-        <li><a href="#">1</a></li>
-        <li class="active"><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li class="next"><a href="#">next</a></li>
-    </ul>*@
+            <li class="prev"><a href="#">prev</a></li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li class="next"><a href="#">next</a></li>
+        </ul>*@
+    <script>
+        function doIt(item, baseUrl) {
+            window.location.href = baseUrl + '?PageSize=' + item.value + '&PageNumber=1'
+            Model.SelectedPageSize=item.value
+        }    
+    </script>
+    
 </div>

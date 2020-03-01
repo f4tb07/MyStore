@@ -39,7 +39,29 @@ namespace UI
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            app.UseMvc(routes=> { routes.MapRoute(name: "FirstRoute", template: "{controller=product}/{action=ShowAllProducts}/{id?}"); });
+            app.UseMvc(routes=>
+            {
+                routes.MapRoute(
+                               name: "thired",
+                               template: "P{PageNumber:int}S{PageSize:int}",
+                               defaults: new
+                               {
+                                   controller = "Product",
+                                   action = "ShowAllProducts",
+
+                               }
+                               );
+                //routes.MapRoute(
+                //                name: "secondRoute",
+                //                template: "P{PageNumber:int}",
+                //                defaults :new  {
+                //                    controller = "Product",
+                //                    action = "ShowAllProducts",
+                //                    productpage=1
+                //                }
+                //                );
+                routes.MapRoute(name: "FirstRoute", template: "{controller=product}/{action=ShowAllProducts}/{id?}");
+            });
             app.UseStatusCodePages();
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
